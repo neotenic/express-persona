@@ -57,7 +57,7 @@ module.exports = function(app, options) {
     }
     
     
-    if(typeof audience == 'string') {
+    if(typeof personaOpts.audience == 'string') {
       var audience = personaOpts.audience;  
     }else{
       var audience = personaOpts.audience.slice(personaOpts.audience.indexOf(req.body.audience))[0]

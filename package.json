@@ -1,6 +1,6 @@
 {
   "name": "express-persona",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Mozilla Persona authentication for your Express application",
   "keywords": [
     "mozilla",
@@ -14,7 +14,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbuck/express-persona.git"
+    "url": "https://github.com/neotenic/express-persona.git"
   },
   "scripts": {
     "test": "./node_modules/.bin/tap --timeout 120 test/*.test.js"
