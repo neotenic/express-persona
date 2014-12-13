@@ -55,8 +55,15 @@ module.exports = function(app, options) {
       personaOpts.verifyResponse("Server-side exception", req, res);
       return;
     }
+    
+    
+    if(typeof audience == 'string') {
+      var audience = personaOpts.audience;  
+    }else{
+      var audience = personaOpts.audience.slice(personaOpts.audience.indexOf(req.body.audience))[0]
+    }
 
-    verify(req.body.assertion, personaOpts.audience, function(err, email, response) {
+    verify(req.body.assertion, audience, function(err, email, response) {
       if (err) {
         if (err instanceof Error) {
           err = err.message;
