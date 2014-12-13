@@ -38,7 +38,7 @@ module.exports = function(app, options) {
 
   var personaOpts = {};
   Object.keys(defaultOptions).forEach(function(key) {
-    if (typeof options[key] === typeof defaultOptions[key]) {
+    if (typeof options[key] != "undefined") {
       personaOpts[key] = options[key];
     } else {
       personaOpts[key] = defaultOptions[key];
@@ -55,7 +55,7 @@ module.exports = function(app, options) {
       personaOpts.verifyResponse("Server-side exception", req, res);
       return;
     }
-    
+    console.log(personaOpts.audience, req.body.audience)
     
     if(typeof personaOpts.audience == 'string') {
       var audience = personaOpts.audience;  
